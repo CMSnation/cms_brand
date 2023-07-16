@@ -9,7 +9,7 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 export default function Home() {
     return (
         <>
-            <Head title='Welcome to Laravel' />
+            <Head title={`Panti Asuhan Keren`} />
             <Header
                 title='Panti Asuhan Keren'
                 description='Inertia is a new approach to building classic server-driven web apps. We call it the modern monolith.'

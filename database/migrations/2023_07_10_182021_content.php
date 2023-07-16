@@ -41,6 +41,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+        Schema::dropIfExists('carousel');
+        Schema::dropIfExists('content');
+        Schema::dropIfExists('content_image');
     }
 };
