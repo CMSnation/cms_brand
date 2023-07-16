@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 
 // user 
 Route::get('/', HomeController::class)->name('home');
+// testing
 Route::get('test', TestController::class)->name('test');
+Route::post('test', [TestController::class, 'store'])->name('test.store');
+Route::put('test', [TestController::class, 'edit'])->name('test.edit');
+Route::delete('test/{id}', [TestController::class, 'delete'])->name('test.delete');
+
 Route::get('dashboard', DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('about', AboutController::class)->name('about');
 

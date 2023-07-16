@@ -1,9 +1,8 @@
 <?php
-// ivan - 16 Agustus 2023
+// ivan - 16 Juli 2023
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -12,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->integer('price')->default(0);
+            $table->string('title')->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->string('type')->default('page');
+            $table->text('content')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('contents');    
     }
 };
