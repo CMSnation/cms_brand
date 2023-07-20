@@ -1,19 +1,18 @@
 <?php
-// ivan - 16 Juli 2023
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Response;
+use Illuminate\Http\Response;
+use App\Models\Webinfo as Product;
 use Inertia\Inertia;
-use App\Models\Content;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Log;
 
-class TestController extends Controller
+class EditController extends Controller
 {
 
-    protected $content = Content::class;    
-    public function __invoke(Request $request): Response
+    protected $content = Product::class;
+    public function __invoke(Request $request)
     {
         // get all content
         $get_all_content = $this->content::all();
@@ -25,7 +24,7 @@ class TestController extends Controller
         // ]);
 
         // return page inertia dengan data $get_all_content (cara 2)
-        return inertia('test')->with('content', $get_all_content);
+        return inertia('edit')->with('content', $get_all_content);
 
         // return page inertia dengan data $get_all_content (cara 3)
         // return inertia('test', compact('get_all_content')); // compact = mengubah variable menjadi array, namun ingat
@@ -56,7 +55,7 @@ class TestController extends Controller
         // 👇🏻ini buat prevent redirect ke route lain, jadi redirect ke halaman yang sama
         return redirect()->back();
     }
-    public function edit(Request $request, Content $content)
+    public function edit(Request $request, Product $content)
     {
         // 👇🏻 Cari data yang sesuai dengan id yang di pass dari react
         $update_data = $content->find($request->id);
@@ -75,7 +74,7 @@ class TestController extends Controller
         return redirect()->back();
     }
 
-    public function delete(Request $request, Content $content)
+    public function delete(Request $request, Product $content)
     {
 
         // ⚡NOTES : delete data menggunakan method DELETE gabisa masukin value ke request, jadi harus pake parameter di route (web.php)

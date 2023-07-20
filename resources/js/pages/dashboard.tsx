@@ -11,10 +11,6 @@ export default function Dashboard() {
     return (
         <>
             <Head title='Dashboard' />
-            <Header
-                title='Dashboard'
-                description='Dashboard is the protected page. You can only access this page if you are logged in.'
-            />
             <Container>
                 <Card>
                     <SectionTitle title='Dashboard' description={`Hi ${auth.user.name}, you are now logged in.`} />
@@ -23,7 +19,7 @@ export default function Dashboard() {
                         <div className='mb-2 text-muted-foreground'>// The page you are currently visiting is</div>
                         <div className='text-lime-600 dark:text-lime-400'>"resources/js/Pages/Dashboard.tsx"</div>
                     </CardContent>
-                </Card>
+                </Card> 
             </Container>
         </>
     );

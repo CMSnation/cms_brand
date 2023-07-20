@@ -1,0 +1,44 @@
+#Product {
+    width: 100%;
+    height: fit-content;
+    padding: 5% 10%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 227, 227);
+
+    #title {
+        color: var(--title-color, #22495F);
+        font-family: Nunito Sans;
+        font-size: 1.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+    }
+
+
+    #ProductContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    #CTA {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        background-color: green;
+        border-radius: 10px;
+        padding: 0.5rem 0.5rem;
+        color: white;
+    }
+}

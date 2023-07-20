@@ -101,3 +101,10 @@ If you like making new features, feel free to make a [pull request](https://gith
 increase laravel page load speed with cache
 1. php artisan route:cache
 2. php artisan route:clear
+
+[start project]
+1. composer install
+2. yarn install / npm i
+3. php artisan migrate:refresh --seed --seeder=CallAllSeeder
+4. php artisan serve
+5. yarn dev / npm run dev   

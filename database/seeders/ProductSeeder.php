@@ -12,9 +12,9 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         // declare variable $product yang menuju ke table product
-        $product = DB::table('product');
+        $products = DB::table('products');
         // hapus semua data yang ada di table product dengan truncate()
-        $product->truncate();
+        $products->truncate();
 
         // declare variable $data yang berisi array data yang nanti akan dimasukan ke table product
         $data = [
@@ -54,6 +54,8 @@ class ProductSeeder extends Seeder
                 'image' => 'https://picsum.photos/200/300',
             ],
         ];
-        $product->insert($data);
+
+        // insert data ke table product
+        $products->insert($data);
     }
 }

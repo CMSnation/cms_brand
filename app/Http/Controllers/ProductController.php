@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return inertia('product/product', [
+        return inertia('products/products', [
             'product' => [
                 'id' => 1,
                 'name' => 'Product 1',

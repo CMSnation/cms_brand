@@ -7,9 +7,12 @@ use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
+use App\Models\Webinfo;
 
 class HandleInertiaRequests extends Middleware
 {
+
+
     protected $rootView = 'app';
 
     public function version(Request $request): ?string
@@ -19,6 +22,7 @@ class HandleInertiaRequests extends Middleware
 
     public function share(Request $request): array
     {
+
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user() ? UserResource::make($request->user()) : null,
@@ -30,6 +34,10 @@ class HandleInertiaRequests extends Middleware
             ],
 
             'hasTermsAndPrivacyPolicyFeature' => Clara::hasTermsAndPrivacyPolicyFeature(),
+            // for footer data
+            'footer' => [
+                'copyright' => 'Your Company 2023',
+            ],
         ]);
     }
 }

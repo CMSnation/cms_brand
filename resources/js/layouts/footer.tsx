@@ -1,9 +1,10 @@
 // ivan - 16 Juli 2023
 import "./index.scss";
 import { Link } from '@inertiajs/react';
-import { SVGProps } from 'react';
+import { SVGProps, useEffect } from 'react';
 import { Input } from '@/components/input';
 import { Button } from '@/components/button';
+import { usePage } from '@inertiajs/react';
 
 const navigation = {
     solutions: [
@@ -95,17 +96,20 @@ const navigation = {
 };
 
 export default function Footer() {
+    // 👇🏻 get data from shared data in app\Http\Middleware\HandleInertiaRequests.php (footer)
+    const { footer }: any = usePage().props;
+    // useEffect(() => {
+    //     console.log(footer);
+    // }, []);
+
     return (
         <footer aria-labelledby='footer-heading'>
-            {/* <h2 id='footer-heading'>
-                Footer
-            </h2> */}
             <div className='mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32'>
                 <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
                     <div className='grid grid-cols-2 gap-8 xl:col-span-2'>
                         <div className='md:grid md:grid-cols-2 md:gap-8'>
                             <div>
-                                <h3 className='text-sm font-semibold leading-6 text-primary'>Solutionss</h3>
+                                <h3 className='text-sm font-semibold leading-6 text-primary'>Solution</h3>
                                 <ul role='list' className='mt-6 space-y-4'>
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
@@ -200,7 +204,7 @@ export default function Footer() {
                         ))}
                     </div>
                     <p className='mt-8 text-xs leading-5 text-muted-foreground md:order-1 md:mt-0'>
-                        &copy; 2020 Your Company, Inc. All rights reserved.
+                        &copy; {footer.copyright}, Inc. All rights reserved.
                     </p>
                 </div>
             </div>

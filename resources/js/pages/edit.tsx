@@ -5,10 +5,11 @@ import { router } from "@inertiajs/react";
 
 // jangan lupa parameter di props di sesuaikan dengan parameter yang di kirim dari controller
 export default function Test({ content }: any) {
+
     // default value dari form kita buat
     const [values, setValues] = useState({
         title: "",
-        content: "",
+        description: "",
         // add more value here
     })
 
@@ -45,7 +46,7 @@ export default function Test({ content }: any) {
                     <br />
                     <label htmlFor="content">Content:</label>
                     <br />
-                    <textarea id="content" value={values.content} onChange={handleChange} />
+                    <textarea id="content" value={values.description} onChange={handleChange} />
                     <br />
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
                 </form>
@@ -68,12 +69,12 @@ const UpdateModal = (props: any) => {
     const initial = {
         id: props.id,
         title: props.title,
-        content: props.content,
+        description: props.description,
     }
     const [values, setValues] = useState({
         id: props.id,
         title: props.title,
-        content: props.content,
+        description: props.description,
         // add more value here
     })
 
@@ -87,7 +88,7 @@ const UpdateModal = (props: any) => {
     }
 
     function handleSubmit(e: any) {
-        if (initial.title === values.title && initial.content === values.content) {
+        if (initial.title === values.title && initial.description === values.description) {
             e.preventDefault()
             toogleOpen() // close modal
         } else {
@@ -115,7 +116,7 @@ const UpdateModal = (props: any) => {
                     <br />
                     <br />
                     <label htmlFor="content">Content:</label>
-                    <input id="content" defaultValue={values.content} value={values.content} onChange={handleChange} />
+                    <input id="content" defaultValue={values.description} value={values.description} onChange={handleChange} />
                     <br />
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
                 </form>
@@ -135,12 +136,12 @@ const ContentCard = (props: any) => {
     const initial = {
         id: props.id,
         title: props.title,
-        content: props.content,
+        description: props.description,
     }
     const [values, setValues] = useState({
         id: props.id,
         title: props.title,
-        content: props.content,
+        description: props.description,
         // add more value here
     })
 
@@ -161,7 +162,7 @@ const ContentCard = (props: any) => {
     return (
         <div className="m-5 shadow-md rounded-md p-4 border-blue-300">
             <h1 className="text-black text-lg">{props.title}</h1>
-            <p className="text-black">{props.content}</p>
+            <p className="text-black">{props.description}</p>
             <UpdateModal {...props} /><button onClick={handleSubmit} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
         </div>
     );

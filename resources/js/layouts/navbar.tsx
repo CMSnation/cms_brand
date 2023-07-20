@@ -18,7 +18,7 @@ import { DashboardIcon, ExitIcon, GearIcon } from '@radix-ui/react-icons';
 export default function Navbar() {
     const { auth } = usePage<PageProps>().props;
     return (
-        <nav className='hidden border-b sm:block'>
+        <nav className=' sticky w-full h-fit bg-white hidden border-b sm:block z-10'>
             <div className='mx-auto max-w-screen-2xl items-center py-4 sm:px-6 lg:px-8'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-x-4'>
@@ -30,6 +30,15 @@ export default function Navbar() {
                         </NavLink>
                         <NavLink active={route().current('about')} href={route('about')}>
                             About
+                        </NavLink>
+                        <NavLink active={route().current('products')} href={route('products')}>
+                            Products
+                        </NavLink>
+                        <NavLink active={route().current('news')} href={route('news')}>
+                            News
+                        </NavLink>
+                        <NavLink active={route().current('contact')} href={route('contact')}>
+                            Contact
                         </NavLink>
                         {auth.user && (
                             <NavLink active={route().current('dashboard')} href='/dashboard'>
