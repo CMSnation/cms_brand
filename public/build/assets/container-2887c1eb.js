@@ -1,0 +1,1 @@
+import{b as m}from"./app-2eed7194.js";import{a as x}from"./button-14336666.js";function r({withNoHorizontalPadding:s=!1,children:a}){return m("div",{className:x("mx-auto max-w-7xl py-4 sm:px-6 sm:py-10 lg:px-8",s?null:"px-4 sm:px-0"),children:a})}export{r as C};

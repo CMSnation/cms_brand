@@ -1,0 +1,1 @@
+import{b as d,F as i,j as e}from"./app-2eed7194.js";function c(r){return d(i,{children:e("div",{className:"ProductCard",children:[d("img",{src:r.image,alt:""}),e("div",{id:"ProductCard-Content",children:[d("h2",{id:"Title",children:r.name}),d("p",{id:"Desc",children:r.description}),d("button",{id:"CTA",children:"See more"})]})]})})}export{c as P};
