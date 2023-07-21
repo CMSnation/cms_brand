@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\ProductconfigController;
 use App\Http\Controllers\WebconfigController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,9 @@ Route::get('about', AboutController::class)->name('about');
 Route::get('webconfig', WebconfigController::class)->name('webconfig');
 Route::put('webconfig', [WebconfigController::class, 'update'])->name('webconfig.update');
 
+// # halaman product config
+Route::get('productconfig', ProductconfigController::class)->name('productconfig');
+Route::post('productconfig', [ProductconfigController::class, 'create'])->name('productconfig.create');
 
 // admin
 Route::controller(ProfileController::class)->middleware('auth')->group(function () {

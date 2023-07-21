@@ -6,7 +6,7 @@ import Header from '@/components/general/header/header';
 import ProductCard from '@/components/products/productsCard';
 import "./products.scss";
 
-export default function ProductPage() {
+export default function ProductPage({ products }: { products: any }) {
     return (
         <>
             <Head title='Products' />
@@ -17,10 +17,14 @@ export default function ProductPage() {
             />
             <div id="Products">
                 <div id="ProductsContainer">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    {
+                        products.map((product: any) => {
+                            return (
+                                <ProductCard {...product} />
+                            )
+                        }
+                        )
+                    }
                 </div>
             </div>
         </>

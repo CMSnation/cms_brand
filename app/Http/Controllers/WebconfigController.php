@@ -14,7 +14,6 @@ class WebconfigController extends Controller
             'data' => $webinfo->getall(),
         ]);
     }
-
     public function update(Request $request, Webinfo $webinfo)
     {
         $webinfo->updatedesc($request);

@@ -36,13 +36,6 @@ export default function Contact({ name }: any) {
                 description="Have any question in mind or want to enquire? Please feel free to contact us through the form or the following details."
             />
             <div id="content">
-                {/* <h1 id='Title'>
-                    Contact us!
-                </h1>
-                <p id='Desc'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspen varius enim in eros elementum tristique.
-                </p> */}
                 <form id='form' onSubmit={handleSubmit}>
                     {/* id harus sesuai dengan nama key dari item yang akan di submit */}
                     <div id='top'>
@@ -71,7 +64,7 @@ export default function Contact({ name }: any) {
                         <textarea placeholder='Type your Message' id="message" value={values.message} onChange={handleChange} />
                     </div>
                     <br />
-                    <button id='button' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+                    <button type="submit" id='button' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
                 </form>
             </div>
         </div>

@@ -156,24 +156,26 @@ class Webinfo extends Model
         $linkedin->description = $request->linkedin;
         $linkedin->save();
     }
-    // ⚡about page ⚡
+    // ⚡ABOUT PAGE ⚡
     // 🌟 get company about title
     public function getAboutTitle()
     {
         return $this->all()->where('title', 'about_title')->first();
     }
-    public function updateAboutTitle($request){
+    public function updateAboutTitle($request)
+    {
         $aboutTitle = $this->where('title', 'about_title')->first();
         $aboutTitle->description = $request->aboutTitle;
         $aboutTitle->save();
     }
-    
+
     // 🌟 get company about description
     public function getAboutContent()
     {
         return $this->all()->where('title', 'about_content')->first();
     }
-    public function updateAboutDesc($request){
+    public function updateAboutDesc($request)
+    {
         $aboutDesc = $this->where('title', 'about_content')->first();
         $aboutDesc->description = $request->aboutDesc;
         $aboutDesc->save();
@@ -184,7 +186,8 @@ class Webinfo extends Model
     {
         return $this->all()->where('title', 'about_image')->first();
     }
-    public function updateAboutImage($request){
+    public function updateAboutImage($request)
+    {
         $aboutImage = $this->where('title', 'about_image')->first();
         $aboutImage->description = $request->aboutImage;
         $aboutImage->save();
@@ -195,10 +198,22 @@ class Webinfo extends Model
     {
         return $this->all()->where('title', 'about_video')->first();
     }
-    public function updateAboutVideo($request){
+    public function updateAboutVideo($request)
+    {
         $aboutVideo = $this->where('title', 'about_video')->first();
         $aboutVideo->description = $request->aboutVideo;
         $aboutVideo->save();
     }
-    
+    // ⚡PRODUCT PAGE ⚡
+    // 🌟 get company product title
+    public function getProductTitle()
+    {
+        return $this->all()->where('title', 'product_title')->first();
+    }
+    public function updateProductTitle($request)
+    {
+        $productTitle = $this->where('title', 'product_title')->first();
+        $productTitle->description = $request->productTitle;
+        $productTitle->save();
+    }
 }

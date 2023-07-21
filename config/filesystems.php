@@ -55,7 +55,6 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-
     ],
 
     /*
@@ -69,8 +68,8 @@ return [
     |
     */
 
-    'links' => [
-        public_path('storage') => storage_path('app/public'),
-    ],
-
+    // 👇🏻 no need to use this | give me several bug, I don't know why (from Storage-link)
+    // 'links' => [
+    //     public_path('app/public') => storage_path('app/public'),
+    // ],
 ];
